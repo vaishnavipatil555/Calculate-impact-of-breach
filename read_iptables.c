@@ -1,5 +1,6 @@
 # include <stdio.h> 
 # include <string.h> 
+# include "graph.c"
 int main( ){ 
     FILE *fp ; 
     char dataToBeRead[50]; 
@@ -7,28 +8,39 @@ int main( ){
  
     fp = fopen("info.txt", "r") ; 
 
-    if ( fp == NULL ) {         
+	
+    int i = 0;
+    while( fgets ( dataToBeRead, 50, fp ) != NULL ){ 
+      	strcpy(arr[i], dataToBeRead);
+      	i++;
     } 
-    else
-    {       
-        int i = 0;
-        while( fgets ( dataToBeRead, 50, fp ) != NULL ){ 
-          	strcpy(arr[i], dataToBeRead);
-          	i++;
-        } 
-        fclose(fp); 
-   		for(int i = 0; i < 4; i++){
-    		printf("%s\n", arr[i]);
-   	 	}
-   	 	char* tok;
-   	 	tok = strtok(arr[0], " ");
-   	 	while(tok != NULL){
-   	 		printf("%s\n", tok);
-   	 		tok = strtok(NULL, " ");
-   	 	}
+    fclose(fp); 
+	Graph* tg = createGraph(i);
+	Graph* ug = createGraph(i);
+	Graph* ig = createGraph(i);   
+ 	char* tok;
+ 	int j;
+	for(int j = 0; j < i; j++)
+	{
+	 	tok = strtok(arr[j], " ");
+	 	while(tok != NULL){
+	 		if(tok[0] != '-' && tok[2] == 'a'){
+				if(tok[1] == 't'){
+					addEdge(tg, j, tok[0] - '0');
+				}
+				else if(tok[1] == 'u'){
+					addEdge(ug, j, tok[0] - '0');
+				}
+				else{
+					addEdge(ig, j, tok[0] - '0');
+				}
+			}
+			tok = strtok(NULL, " ");
+		}
+	}
 
-    }  
-     
-   
+	printGraph(ug); printGraph(tg); printGraph(ig);
+
+
     return 0;         
 } 
