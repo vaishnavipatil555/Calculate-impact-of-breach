@@ -14,11 +14,13 @@ int main( ){
       	strcpy(arr[i], dataToBeRead);
       	i++;
     } 
-    	
+
     fclose(fp); 
-	Graph* tg = createGraph(i);
-	Graph* ug = createGraph(i);
-	Graph* ig = createGraph(i);   
+
+    //Argument is number of nodes
+	Graph* tg = createGraph(7);
+	Graph* ug = createGraph(7);
+	Graph* ig = createGraph(7);   
  	char* tok;
  	int j;
 	for(int j = 0; j < i; j++)
@@ -40,8 +42,63 @@ int main( ){
 		}
 	}
 
-	printGraph(ug); printGraph(tg); printGraph(ig);
+	printGraph(ug); 
+
+	int *res;
 
 
+	printf("Targeted node 0 \nImpacted nodes are :- \n");
+	res = dfs_from_node(ug, 0);
+	for(int i = 0; i < ug -> V; i++){
+		if(res[i] == 1)
+			printf("* %d \n", i);
+	}
+
+	printGraph(tg); 
+	printf("Targeted node 0 \nImpacted nodes are :- \n");
+	res = dfs_from_node(tg, 0);
+	for(int i = 0; i < tg -> V; i++){
+		if(res[i] == 1)
+			printf("* %d \n", i);
+	}
+
+	printGraph(ig);
+	printf("Targeted node 0 \nImpacted nodes are :- \n");
+	res = dfs_from_node(ig, 0);
+	for(int i = 0; i < ig -> V; i++){
+		if(res[i] == 1)
+			printf("* %d \n", i);
+	}
+
+	for(int i = 0; i < ug -> V; i++){
+		printf("Targeted node %d \nImpacted nodes are :- \n", i);
+		res = dfs_from_node(ug, i);
+		for(int j = 0; j < ug -> V; j++){
+			if(res[j] == 1)
+				printf("* %d \n", j);
+		}
+		free(res);		
+	}
+
+/*
+	for(int i = 0; i < tg -> V; i++){
+		printf("Targeted node %d \nImpacted nodes are :- \n", i);
+		res = dfs_from_node(tg, i);
+		for(int j = 0; j < tg -> V; j++){
+			if(res[j] == 1)
+				printf("* %d \n", j);
+		}		
+		free(res);
+	}
+
+	for(int i = 0; i < ig -> V; i++){
+		printf("Targeted node %d \nImpacted nodes are :- \n", i);
+		res = dfs_from_node(ig, i);
+		for(int j = 0; j < ig -> V; j++){
+			if(res[j] == 1)
+				printf("* %d \n", j);
+		}		
+		free(res);
+	}*/
     return 0;         
 } 

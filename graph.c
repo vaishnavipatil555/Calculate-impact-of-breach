@@ -29,10 +29,10 @@ Graph* createGraph(int V)
     return graph; 
 } 
 
-adjListNode* newadjListNode(int dest) 
+adjListNode* newadjListNode(int data) 
 { 
     adjListNode* newNode = (adjListNode*) malloc(sizeof(adjListNode)); 
-    newNode->data = dest; 
+    newNode->data = data; 
     newNode->next = NULL; 
     return newNode; 
 } 
@@ -44,19 +44,52 @@ void addEdge(Graph* graph, int src, int dest)
     graph->arr[src].head = newNode; 
 } 
 
+void dfsUtil(Graph *graph, int index, int *visited){
+	adjListNode *p = graph -> arr[index].head;
+	if(p == NULL)
+	{
+		visited[index] = 1; 
+		//printf("%d \n", index);
+		return;
+	}
+	
+	visited[index] = 1;
+	while(p != NULL){
+		if(visited[p -> data] == 0)
+			dfsUtil(graph, p -> data, visited);
+		p = p -> next;
+	}
+	//printf("%d \n", index);
+}
+
+int* dfs_from_node(Graph *graph, int index){
+	int *visited;
+	visited = (int*)malloc(sizeof(graph -> V));
+	memset(visited, 0, sizeof(visited));
+	dfsUtil(graph, index, visited);
+	/*for(int i = 0; i < graph -> V; i++){
+		if(visited[i] == 1)
+			printf("* %d \n", i);
+	}*/
+	return visited;
+}
+
 void printGraph(Graph* graph) 
 { 
     int v; 
     for (v = 0; v < graph->V; ++v) 
     { 
-        adjListNode* pCrawl = graph->arr[v].head; 
+        adjListNode* p = graph->arr[v].head; 
         printf("\n Adjacency list of vertex %d\n head ", v); 
-        while (pCrawl) 
+        while (p) 
         { 
-            printf("-> %d", pCrawl->data); 
-            pCrawl = pCrawl->next; 
+            printf("-> %d", p->data); 
+            p = p->next; 
         } 
         printf("\n"); 
     } 
     printf("\n\n\n\n");
 } 
+
+
+
