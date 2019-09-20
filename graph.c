@@ -22,6 +22,7 @@ Graph* createGraph(int V)
     graph->arr =  (adjList*) malloc(V * sizeof(adjList)); 
   
     int i; 
+ 
     for (i = 0; i < V; ++i) 
         graph->arr[i].head = NULL; 
 

@@ -14,6 +14,7 @@ int main( ){
       	strcpy(arr[i], dataToBeRead);
       	i++;
     } 
+    	
     fclose(fp); 
 	Graph* tg = createGraph(i);
 	Graph* ug = createGraph(i);
