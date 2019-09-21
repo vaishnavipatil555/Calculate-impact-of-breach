@@ -65,7 +65,10 @@ void dfsUtil(Graph *graph, int index, int *visited){
 int* dfs_from_node(Graph *graph, int index){
 	int *visited;
 	visited = (int*)malloc(sizeof(graph -> V));
-	memset(visited, 0, sizeof(visited));
+	
+	for(int i = 0; i < graph -> V; i++){
+		visited[i] = 0;
+	}
 	dfsUtil(graph, index, visited);
 	/*for(int i = 0; i < graph -> V; i++){
 		if(visited[i] == 1)

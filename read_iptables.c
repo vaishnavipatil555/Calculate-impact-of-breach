@@ -41,35 +41,11 @@ int main( ){
 			tok = strtok(NULL, " ");
 		}
 	}
-
-	printGraph(ug); 
-
+	
 	int *res;
 
-
-	printf("Targeted node 0 \nImpacted nodes are :- \n");
-	res = dfs_from_node(ug, 0);
-	for(int i = 0; i < ug -> V; i++){
-		if(res[i] == 1)
-			printf("* %d \n", i);
-	}
-
-	printGraph(tg); 
-	printf("Targeted node 0 \nImpacted nodes are :- \n");
-	res = dfs_from_node(tg, 0);
-	for(int i = 0; i < tg -> V; i++){
-		if(res[i] == 1)
-			printf("* %d \n", i);
-	}
-
-	printGraph(ig);
-	printf("Targeted node 0 \nImpacted nodes are :- \n");
-	res = dfs_from_node(ig, 0);
-	for(int i = 0; i < ig -> V; i++){
-		if(res[i] == 1)
-			printf("* %d \n", i);
-	}
-
+	printf("*************************                UDP                   ****************************\n");
+	printGraph(ug); 
 	for(int i = 0; i < ug -> V; i++){
 		printf("Targeted node %d \nImpacted nodes are :- \n", i);
 		res = dfs_from_node(ug, i);
@@ -79,18 +55,27 @@ int main( ){
 		}
 		free(res);		
 	}
+	printf("*******************************************************************************************\n");
 
-/*
+	
+	printf("*************************                TCP                   ****************************\n");
+	printGraph(tg); 
 	for(int i = 0; i < tg -> V; i++){
-		printf("Targeted node %d \nImpacted nodes are :- \n", i);
-		res = dfs_from_node(tg, i);
-		for(int j = 0; j < tg -> V; j++){
-			if(res[j] == 1)
-				printf("* %d \n", j);
-		}		
-		free(res);
+	printf("Targeted node %d \nImpacted nodes are :- \n", i);
+	res = dfs_from_node(tg, i);
+	for(int j = 0; j < tg -> V; j++){
+		if(res[j] == 1)
+			printf("* %d \n", j);
+		}
+		free(res);		
 	}
+	printf("*******************************************************************************************\n");
 
+
+	
+	
+	printf("*************************                ICMP                  ****************************\n");
+	printGraph(ig);
 	for(int i = 0; i < ig -> V; i++){
 		printf("Targeted node %d \nImpacted nodes are :- \n", i);
 		res = dfs_from_node(ig, i);
@@ -99,6 +84,10 @@ int main( ){
 				printf("* %d \n", j);
 		}		
 		free(res);
-	}*/
+	}
+	printf("*******************************************************************************************\n");
+
+
+
     return 0;         
 } 
