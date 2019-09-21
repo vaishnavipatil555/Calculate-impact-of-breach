@@ -24,20 +24,28 @@
                                 </br></br>
                             </td></tr>
                             
-                            <tr> <td> <h1>Selected protocols are</h1></td></tr>
-                            {% for result in protocol_list %}
+                            <!--tr> <td> <h1>Selected protocols are</h1></td></tr>
+                            {% for result in protocol_list %} >
                             <tr>
                                 <td><h2>{{ result }}</h2></td>
                             </tr>
+                            {% endfor %} -->
+
+                            <tr> <td> <h1>Impacted systems are </h1></td> <td><h1> Cost</h1> </td></tr>
+                            {% for result in ans %}
+                            <tr>
+                                <td><h2>{{ result[0] }}</h2></td>
+                                <td><h2>{{ result[1] }}</h2></td>
+                                
+                            </tr>
                             {% endfor %}
 
-
-                            <tr> <td> <h1>Impacted systems are </h1></td></tr>
-                            {% for result in res %}
+                            <!--tr> <td> <h1>Impacted systems are </h1></td></tr>
+                            {% for result in impacted_nodes %}
                             <tr>
                                 <td><h2>{{ result }}</h2></td>
                             </tr>
-                            {% endfor %}
+                            {% endfor %}-->
 
 
                         </tbody>
