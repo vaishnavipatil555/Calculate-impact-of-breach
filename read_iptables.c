@@ -1,4 +1,5 @@
 # include <stdio.h> 
+# include <stdlib.h>
 # include <string.h> 
 # include "graph.c"
 int main( ){ 
@@ -44,7 +45,7 @@ int main( ){
 	
 	int *res;
 
-	printf("*************************                UDP                   ****************************\n");
+	printf("\n\n*************************                UDP                   ****************************\n");
 	printGraph(ug); 
 	for(int i = 0; i < ug -> V; i++){
 		printf("Targeted node %d \nImpacted nodes are :- \n", i);
@@ -58,7 +59,7 @@ int main( ){
 	printf("*******************************************************************************************\n");
 
 	
-	printf("*************************                TCP                   ****************************\n");
+	printf("\n\n*************************                TCP                   ****************************\n");
 	printGraph(tg); 
 	for(int i = 0; i < tg -> V; i++){
 	printf("Targeted node %d \nImpacted nodes are :- \n", i);
@@ -71,10 +72,8 @@ int main( ){
 	}
 	printf("*******************************************************************************************\n");
 
-
 	
-	
-	printf("*************************                ICMP                  ****************************\n");
+	printf("\n\n*************************                ICMP                  ****************************\n");
 	printGraph(ig);
 	for(int i = 0; i < ig -> V; i++){
 		printf("Targeted node %d \nImpacted nodes are :- \n", i);
@@ -86,8 +85,6 @@ int main( ){
 		free(res);
 	}
 	printf("*******************************************************************************************\n");
-
-
 
     return 0;         
 } 
