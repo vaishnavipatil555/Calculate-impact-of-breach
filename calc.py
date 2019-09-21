@@ -56,7 +56,7 @@ def result():
     
     protocol_list = get_protocol_list(tcp, udp, icmp, al)
 
-    res = get_res(protocol_list, VM, al)
+    res = get_res(protocol_list, VM, True)
     return render_template('result.html', VM=VM, res=res, protocol_list=protocol_list)
 
 if __name__ == '__main__':

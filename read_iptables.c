@@ -9,7 +9,6 @@ int main( ){
  
     fp = fopen("info.txt", "r") ; 
 
-	
     int i = 0;
     while( fgets ( dataToBeRead, 50, fp ) != NULL ){ 
       	strcpy(arr[i], dataToBeRead);
@@ -48,7 +47,10 @@ int main( ){
 	//printf("UDP\n");
 	//FILE *fp1 = fopen("impact_udp.txt", "wb");
 	printf("\n");
-	//printGraph(ug); 
+	//printGraph(ug);
+
+	printf("\n kuashdkua \n");
+	 
 	for(int i = 0; i < ug -> V; i++){
 		//printf("Targeted node %d \nImpacted nodes are :- \n", i);
 		res = dfs_from_node(ug, i);
@@ -61,13 +63,15 @@ int main( ){
 			}
 		}
 		printf("%d \n", j);
-			
+				
 		free(res);		
 	}
 	//fclose(fp1);
 	//printf("*******************************************************************************************\n");
-
 	
+	printf("\n kuashdkua \n");
+	
+
 	printf("\n");
 	//printGraph(tg); 
 	for(int i = 0; i < tg -> V; i++){

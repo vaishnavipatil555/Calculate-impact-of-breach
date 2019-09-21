@@ -5,4 +5,9 @@
 1ta 2ua -ad
 3ta 3ia 6ta -ad
 2ta 1ia 3ua 4ia -ad
+1ta 3ua -ad
+7ua 1ua -ad
+6ia 1ta -ad
+7ua 2ta -ad
+9ua 9ta -ad
 
