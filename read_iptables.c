@@ -45,46 +45,57 @@ int main( ){
 	
 	int *res;
 
-	printf("\n\n*************************                UDP                   ****************************\n");
-	printGraph(ug); 
+	//printf("UDP\n");
+	//FILE *fp1 = fopen("impact_udp.txt", "wb");
+	printf("\n");
+	//printGraph(ug); 
 	for(int i = 0; i < ug -> V; i++){
-		printf("Targeted node %d \nImpacted nodes are :- \n", i);
+		//printf("Targeted node %d \nImpacted nodes are :- \n", i);
 		res = dfs_from_node(ug, i);
-		for(int j = 0; j < ug -> V; j++){
-			if(res[j] == 1)
-				printf("* %d \n", j);
+		int j;
+		for(j = 0; j < ug -> V; j++){
+			if(res[j] == 1){
+				printf("%d ", j);
+				//fwrite(&j, sizeof(int), 1,fp1);
+				//fprintf(fp1, "rr ");
+			}
 		}
+		printf("%d \n", j);
+			
 		free(res);		
 	}
-	printf("*******************************************************************************************\n");
+	//fclose(fp1);
+	//printf("*******************************************************************************************\n");
 
 	
-	printf("\n\n*************************                TCP                   ****************************\n");
-	printGraph(tg); 
+	printf("\n");
+	//printGraph(tg); 
 	for(int i = 0; i < tg -> V; i++){
-	printf("Targeted node %d \nImpacted nodes are :- \n", i);
-	res = dfs_from_node(tg, i);
-	for(int j = 0; j < tg -> V; j++){
-		if(res[j] == 1)
-			printf("* %d \n", j);
+		//printf("Targeted node %d \nImpacted nodes are :- \n", i);
+		res = dfs_from_node(tg, i);
+		for(int j = 0; j < tg -> V; j++){
+			if(res[j] == 1)
+				printf("%d ", j);
 		}
+		printf("\n");
 		free(res);		
 	}
-	printf("*******************************************************************************************\n");
+	//printf("*******************************************************************************************\n");
 
 	
-	printf("\n\n*************************                ICMP                  ****************************\n");
-	printGraph(ig);
+	printf("\n");
+	//printGraph(ig);
 	for(int i = 0; i < ig -> V; i++){
-		printf("Targeted node %d \nImpacted nodes are :- \n", i);
+		//printf("Targeted node %d \nImpacted nodes are :- \n", i);
 		res = dfs_from_node(ig, i);
 		for(int j = 0; j < ig -> V; j++){
 			if(res[j] == 1)
-				printf("* %d \n", j);
-		}		
+				printf("%d ", j);
+		}
+		printf("\n");		
 		free(res);
 	}
-	printf("*******************************************************************************************\n");
+	//printf("*******************************************************************************************\n");
 
     return 0;         
 } 

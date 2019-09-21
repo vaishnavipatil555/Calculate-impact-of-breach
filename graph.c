@@ -81,16 +81,14 @@ void printGraph(Graph* graph)
     for (v = 0; v < graph->V; ++v) 
     { 
         adjListNode* p = graph->arr[v].head; 
-        printf("\n Adjacency list of vertex %d\n head ", v); 
+        //printf("\n Adjacency list of vertex %d\n head ", v); 
         while (p) 
         { 
-            printf("-> %d", p->data); 
+            //printf("-> %d", p->data); 
             p = p->next; 
         } 
-        printf("\n"); 
+        //printf("\n"); 
     } 
-    printf("\n\n\n\n");
+    //printf("\n");
+    return;
 } 
-
-
-

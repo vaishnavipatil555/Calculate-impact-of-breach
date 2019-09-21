@@ -2,3 +2,7 @@
 4ta 3ia 5ia 5ua 6ta -ad
 1ta 6ia 5ia 4ia 1ua -ad
 6ia 6ta 5ta -aa
+1ta 2ua -ad
+3ta 3ia 6ta -ad
+2ta 1ia 3ua 4ia -ad
+
