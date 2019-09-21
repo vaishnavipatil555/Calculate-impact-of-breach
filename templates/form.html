@@ -17,28 +17,28 @@
 			<div class="col-md-4">
 				<form class="form-horizontal" action={{ url_for('result') }}  method="post">
 					<div class="form-group">
-						<label class="control-label col-xs-3" for="var_1">Enter IP of VM</label>
+						<label class="control-label col-xs-5" for="var_1">Enter IP of VM</label>
 						<div class="col-xs-7">
 							<input type="integer" class="form-control" name="VM" placeholder="&nbsp;0&nbsp;">
 						</div>						
-						<label class="control-label col-xs-3" for="var_1">Enter no of VMs</label>
+						<label class="control-label col-xs-5" for="var_1">Enter no of VMs</label>
 						<div class="col-xs-7">
 							<input type="integer" class="form-control" name="tot_nodes" placeholder="&nbsp;0&nbsp;">
 						</div>
 						
-						<label class="control-label col-xs-3" for="var_1">Enter tcp_cost</label>
+						<label class="control-label col-xs-5" for="var_1">Enter tcp_cost</label>
 						<div class="col-xs-7">
-							<input type="integer" class="form-control" name="tcp_cost" placeholder="&nbsp;0&nbsp;">
+							<input type="integer" class="form-control" name="tcp_cost" placeholder="&nbsp;0&nbsp;" value="15">
 						</div>
 
-						<label class="control-label col-xs-3" for="var_1">Enter udp_cost</label>
+						<label class="control-label col-xs-5" for="var_1">Enter udp_cost</label>
 						<div class="col-xs-7">
-							<input type="integer" class="form-control" name="udp_cost" placeholder="&nbsp;0&nbsp;">
+							<input type="integer" class="form-control" name="udp_cost" placeholder="&nbsp;0&nbsp;" value="35">
 						</div>
 
-						<label class="control-label col-xs-3" for="var_1">Enter icmp_cost</label>
+						<label class="control-label col-xs-5" for="var_1">Enter icmp_cost</label>
 						<div class="col-xs-7">
-							<input type="integer" class="form-control" name="icmp_cost" placeholder="&nbsp;0&nbsp;">
+							<input type="integer" class="form-control" name="icmp_cost" placeholder="&nbsp;0&nbsp;" value="35">
 						</div>
 
 					</div>
