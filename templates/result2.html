@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RESULT</title>
+    
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Nunito Sans', sans-serif !important;
+                overflow-x: hidden;
+                background-color: black;
+            }
+            h1, h2 {
+                color: rgb(90, 166, 166);
+                font-weight: bold;
+                font-family: 'Nunito Sans', sans-serif !important;
+            }
+
+            .modal .modal-dialog {
+                max-width: 95%!important;
+            }
+
+            .jumbotron {
+                background-color: white;
+                margin-top: 50px;
+            }
+
+            .path {
+                background-color: rgb(29, 133, 133);
+                margin: 10px !important;
+            }
+            .path:hover {
+                background-color: rgb(25, 173, 181);
+            }
+        </style>
+    </head>
+
+    <body align=center>
+       
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <div class="container">
+                        <legend><h1 class="text-center">RESULT</h1></legend>
+                    </div>
+                    <div class="container">
+                        <form class="form-horizontal">
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label class="control-label col-xs-4" for="result"></label>
+                            <div class="col-xs-4" align="center">
+
+                            <h3> Selected VM:  {{VM}} </h3></br>
+                            <table class = "table table-striped text-center">
+                                <tbody>
+                                    <!--tr>
+                                    <td>
+                                        <h1>The selected system is</h1>
+                                        </br></br>
+                                    </td>
+                                    <td>
+                                            <h1>{{VM}}</h1>
+                                       </br></br>
+                                    </td>
+
+                                    </tr-->
+                                    
+                                    <!--tr> <td> <h1>Selected protocols are</h1></td></tr>
+                                    {% for result in protocol_list %} >
+                                    <tr>
+                                        <td><h2>{{ result }}</h2></td>
+                                    </tr>
+                                    {% endfor %} -->
+
+                                    <tr> <th class="text-center"> Impacted systems </th> <th class="text-center"> Cost of Risk</th></tr>
+                                    {% for result in ans %}
+                                    <tr>
+                                        <td>{{ result[0] }}</td>
+                                        <td>{{ result[1] }}</td>
+                                        
+                                    </tr>
+                                    {% endfor %}
+
+
+
+                                    <!--tr> <td> <h1>Impacted systems are </h1></td></tr>
+                                    {% for result in impacted_nodes %}
+                                    <tr>
+                                        <td><h2>{{ result }}</h2></td>
+                                    </tr>
+                                    {% endfor %}-->
+                                </tbody>
+                            </table>
+
+                                   
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                            <button type="button" class="btn btn-primary path" data-toggle="modal" data-target="#udp">Show UDP Path</button>
+                        </div>
+                        <div class="col-sm-4"><button type="button" class="btn btn-primary path" data-toggle="modal" data-target="#tcp">Show TCP Path</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-primary path" data-toggle="modal" data-target="#icmp">Show ICMP Path</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+       
+
+       
+
+        <!-- Modal -->
+        <div class="modal fade" id="udp" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center" id="udpt">UDP Path</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="jumbotron">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                             
+                                {% for line in tree_udp %}
+                                    {% if line|length > 0%}
+                                        <pre align = "left" width = "100" style = "border : 0px;"> {{line}} <img style = "height : 50px; width : 50px;" src = "/static/comp.jpg"> </img></pre> 
+                                        <!--h3 align = "left">{{line}}</h3-->
+                                    {%else%}
+                                        <pre style = "border : 0px;"></br></br></br></br></pre>
+                                    {% endif %}
+                                {% endfor %}
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                        </div>
+                                            <div class="col-md-8">
+                                                <h3> Legend Table</h3>
+                                                <table class = "table table-bordered">
+                                                    <tr>    
+                                                        <td><h5><b>VM Number</b></h5></td>
+                                                        <td><h5><b>IP address</b></h5></td>
+                                                    </tr>
+                                                        {% for result in legend_udp %}
+                                                    <tr>
+                                                        <td>{{ result[0] }}</td>
+                                                        <td>{{ result[1] }}</td>
+                                                            
+                                                    </tr>
+                                                    
+                                                    {% endfor %}                
+                                                </table>
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="container"></div>
+                            </div>
+                        
+
+                               
+                        </div>
+                              
+                    </div>
+                </div>
+            </div>
+
+      
+              <!-- Modal -->
+<div class="modal fade" id="tcp" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title text-center" id="udpt">TCP Path</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {% for line in tree_tcp %}
+                                {% if line|length > 0%}
+                                    <pre align = "left" width = "100" style = "border : 0px;"> {{line}} <img style = "height : 50px; width : 50px;" src = "/static/comp.jpg"> </img></pre> 
+                                    <!--h3 align = "left">{{line}}</h3-->
+                                {%else%}
+                                    <pre style = "border : 0px;"></br></br></br></br></pre>
+                                {% endif %}
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <h3> Legend Table</h3>
+                                    <table class = "table table-bordered">
+                                        <tr>    
+                                            <td><b>No</b></td>
+                                            <td><b>IP address</b></td>
+                                        </tr>
+                                        {% for result in legend_tcp %}
+                                            <tr>
+                                                <td>{{ result[0] }}</td>
+                                                <td>{{ result[1] }}</td>
+                                                    
+                                                </tr>
+                                            
+                                        {% endfor %}                
+                                    </table>
+
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        </div>
+                        <div class="container">
+                        </div>
+                    </div>
+                
+
+              
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+               
+                <!-- Modal -->
+    <div class="modal fade" id="icmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-center" id="udpt">ICMP Path</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="jumbotron">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                
+                                    {% for line in tree_icmp %}
+                                        {% if line|length > 0%}
+                                            <pre align = "left" width = "100" style = "border : 0px;"> {{line}} <img style = "height : 50px; width : 50px;" src = "/static/comp.jpg"> </img></pre> 
+                                            <!--h3 align = "left">{{line}}</h3-->
+                                        {%else%}
+                                            <pre style = "border : 0px;"></br></br></br></br></pre>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                        <h3> Legend Table</h3>
+                                            <table class = "table table-bordered">
+                                                <tr>    
+                                                    <td><h5><b>No</b></h5></td>
+                                                    <td><h5><b>IP address</b></h5></td>
+                                                </tr>
+                                                {% for result in legend_icmp %}
+                                                    <tr>
+                                                        <td>{{ result[0] }}</td>
+                                                        <td>{{ result[1] }}</td>
+                                                            
+                                                        </tr>
+                                                    
+                                                {% endfor %}                
+                                            </table>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                </div>
+                            </div>
+                
+
+                
+                        </div>
+              
+                    </div>
+                </div>
+            </div>
+                
+
+
+              
+ 
+            </script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

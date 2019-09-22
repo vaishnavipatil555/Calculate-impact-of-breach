@@ -1,0 +1,29 @@
+1ta 2ta 21ua 15ta 15ua 15ia 22ta 16ta 25ta 25ua 25ia 
+0ua 1ua 2ua 3ua 4ua 5ua 6ua 7ua 8ua 9ua 10ua 11ua 12ua 13ua 14ua 15ua 16ua 17ua 18ua 19ua 20ua 21ua 22ua 23ua 24ua 25ua 
+0ia 1ia 1ta 3ta 1ua 23ta 11ta 12ua 13ta 16ua 17ta 19ia 
+0ua 1ua 2ua 3ua 4ua 5ua 6ua 7ua 8ua 9ua 10ua 11ua 12ua 13ua 14ua 15ua 16ua 17ua 18ua 19ua 20ua 21ua 22ua 23ua 24ua 25ua 
+5ta 15ta 26ta 22ta 17ua 18ta 27ta 20ta 
+6ta 16ta 27ta 13ua 0ua 1ua 2ua 4ta 3ua 8ta 10ua 22ta 24ua 28ta 17ua 15ta 15ua 17ta 26ua 9ua 
+19ta 1ua 
+0ua 1ua 2ua 3ua 4ua 5ua 6ua 7ua 8ua 9ua 10ua 11ua 12ua 13ua 14ua 15ua 16ua 17ua 18ua 19ua 20ua 21ua 22ua 23ua 24ua 25ua 26ua 27ua 28ua 
+9ta 1ta 3ta 2ua 13ta 12ta 11ua 22ta 29ua 16ta 16ua 16ia 
+10ta 11ta 11ua 11ia 12ta 
+0ua 1ua 2ua 3ua 4ua 5ua 6ua 7ua 8ua 9ua 10ua 11ua 12ua 13ua 14ua 15ua 16ua 17ua 18ua 19ua 20ua 21ua 22ua 23ua 24ua 25ua 26ua 27ua 28ua 29ua 
+10ia 1ia 8ta 11ia 15ta 13ua 19ta 17ia 14ta 12ia 14ia 
+0ua 1ua 2ua 3ua 4ua 5ua 6ua 7ua 8ua 9ua 10ua 11ua 12ua 13ua 14ua 15ua 16ua 17ua 18ua 19ua 20ua 21ua 22ua 23ua 24ua 25ua 26ua 27ua 28ua 29ua 
+14ta 
+15ua 
+
+0ua 1ua 2ua 3ua 4ua 5ua 6ua 7ua 8ua 9ua 10ua 11ua 12ua 13ua 14ua 15ua 16ua 17ua 18ua 19ua 20ua 21ua 22ua 23ua 24ua 25ua 26ua 27ua 28ua 29ua 
+18ta 
+4ia 
+6ia 
+13ta 13ua 13ia 
+22ua 
+21ua 
+12ua 
+0ia 
+
+
+
+
