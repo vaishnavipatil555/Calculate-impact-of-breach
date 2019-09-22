@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 		return 0;
 	}
 	FILE *fd;
-	int fp, x, i, index, size_IP = 0, length, j;
+	int fp, x, i, index, size_IP = 0, size_IP_old, length, j;
 	char *line, *token, sip[15] = " ", sip2[15], **IPs, *sourceIP, *testfile, protocol, *is_allow;
 	testfile = (char *)malloc(sizeof(char) * strlen(argv[1]));
 	strcpy(testfile, argv[1]);
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 		i++;
 	}
 	close(fp);
-	
+	size_IP_old = size_IP;
 	//read again
 	fd = fopen("info.txt", "w+");
 	fp = open(testfile, O_RDONLY);
@@ -206,6 +206,12 @@ int main(int argc, char *argv[]) {
 	}
 	free(sourceIP);
 	close(fp);
+	size_IP_old = size_IP - size_IP_old;
+	printf("%d\n", size_IP_old);
+	for(j = 0; j < size_IP_old; j++) {
+		fprintf(fd, "\n");
+	}
+	close(fp);
 	fclose(fd);
 	//free(line);
 	fp = open("IPnames.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
@@ -219,8 +225,7 @@ int main(int argc, char *argv[]) {
 		write(fp, strcat(sourceIP, "\n"), strlen(IPs[j]) + 1);
 		free(sourceIP);
 	}
-	close(fp);
-	for(int j = 0; j < i; j++) {
+	for(j = 0; j < i; j++) {
 		free(IPs[j]);
 	}
 	free(IPs);
