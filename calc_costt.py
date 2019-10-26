@@ -6,7 +6,7 @@ def calc_cost_fun(tcp_cost, udp_cost, icmp_cost, vul, no_of_vm):
 	file = open("./impact/impact_tcp.txt", "r")
 	lines=file.readlines()
 	res = lines[int(vul)].strip().split(" ")
-	#print res
+	
 	for i in res:
 		cost[int(i)] += tcp_cost
 

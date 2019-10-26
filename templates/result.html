@@ -56,25 +56,6 @@
                             <h3> Selected VM:  {{VM}} </h3></br>
                             <table class = "table table-striped text-center">
                                 <tbody>
-                                    <!--tr>
-                                    <td>
-                                        <h1>The selected system is</h1>
-                                        </br></br>
-                                    </td>
-                                    <td>
-                                            <h1>{{VM}}</h1>
-                                       </br></br>
-                                    </td>
-
-                                    </tr-->
-                                    
-                                    <!--tr> <td> <h1>Selected protocols are</h1></td></tr>
-                                    {% for result in protocol_list %} >
-                                    <tr>
-                                        <td><h2>{{ result }}</h2></td>
-                                    </tr>
-                                    {% endfor %} -->
-
                                     <tr> <th class="text-center"> Impacted systems </th> <th class="text-center"> Cost of Risk</th></tr>
                                     {% for result in ans %}
                                     <tr>
@@ -83,18 +64,8 @@
                                         
                                     </tr>
                                     {% endfor %}
-
-
-
-                                    <!--tr> <td> <h1>Impacted systems are </h1></td></tr>
-                                    {% for result in impacted_nodes %}
-                                    <tr>
-                                        <td><h2>{{ result }}</h2></td>
-                                    </tr>
-                                    {% endfor %}-->
                                 </tbody>
                             </table>
-
                                    
                             </div>
                         </div>
@@ -119,10 +90,6 @@
             <div class="col-md-2"></div>
         </div>
        
-
-       
-
-        <!-- Modal -->
         <div class="modal fade" id="udp" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -140,8 +107,7 @@
                                              
                                 {% for line in tree_udp %}
                                     {% if line|length > 0%}
-                                        <pre align = "left" width = "100" style = "border : 0px;"> {{line}} <img style = "height : 50px; width : 50px;" src = "/static/comp.jpg"> </img></pre> 
-                                        <!--h3 align = "left">{{line}}</h3-->
+                                        <pre align = "left" width = "100" style = "border : 0px;"> {{line}} <img style = "height : 50px; width : 50px;" src = "/static/comp.jpg"> </img></pre>
                                     {%else%}
                                         <pre style = "border : 0px;"></br></br></br></br></pre>
                                     {% endif %}
@@ -174,17 +140,13 @@
                                     </div>
                                     <div class="container"></div>
                             </div>
-                        
-
-                               
+                                                       
                         </div>
                               
                     </div>
                 </div>
             </div>
 
-      
-              <!-- Modal -->
 <div class="modal fade" id="tcp" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
     <div class="modal-content">
@@ -202,12 +164,10 @@
                             {% for line in tree_tcp %}
                                 {% if line|length > 0%}
                                     <pre align = "left" width = "100" style = "border : 0px;"> {{line}} <img style = "height : 50px; width : 50px;" src = "/static/comp.jpg"> </img></pre> 
-                                    <!--h3 align = "left">{{line}}</h3-->
                                 {%else%}
                                     <pre style = "border : 0px;"></br></br></br></br></pre>
                                 {% endif %}
                             {% endfor %}
-
 
                         </div>
                     </div>
@@ -237,17 +197,11 @@
                         <div class="container">
                         </div>
                     </div>
-                
-
-              
-                </div>
-              
+                </div>              
             </div>
         </div>
     </div>
 
-               
-                <!-- Modal -->
     <div class="modal fade" id="icmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
         <div class="modal-dialog  modal-lg modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -266,12 +220,10 @@
                                     {% for line in tree_icmp %}
                                         {% if line|length > 0%}
                                             <pre align = "left" width = "100" style = "border : 0px;"> {{line}} <img style = "height : 50px; width : 50px;" src = "/static/comp.jpg"> </img></pre> 
-                                            <!--h3 align = "left">{{line}}</h3-->
                                         {%else%}
                                             <pre style = "border : 0px;"></br></br></br></br></pre>
                                         {% endif %}
                                     {% endfor %}
-
                                 </div>
                             </div>
                             <div class="row">
@@ -286,10 +238,8 @@
                                                 {% for result in legend_icmp %}
                                                     <tr>
                                                         <td>{{ result[0] }}</td>
-                                                        <td>{{ result[1] }}</td>
-                                                            
-                                                        </tr>
-                                                    
+                                                        <td>{{ result[1] }}</td>            
+                                                        </tr>                                                    
                                                 {% endfor %}                
                                             </table>
                                         </div>
@@ -298,20 +248,12 @@
                                 </div>
                                 <div class="container">
                                 </div>
-                            </div>
-                
-
-                
-                        </div>
-              
+                            </div>                             
+                        </div>              
                     </div>
                 </div>
             </div>
-                
 
-
-              
- 
             </script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
