@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet"> 
+		<style>
+			body {
+				background: rgb(0,0,0, 0.9);
+				overflow-x: hidden;
+				font-family: 'Nunito Sans', sans-serif;
+			}
+			.container {
+				font-family: 'Nunito Sans', sans-serif !important;
+			}
+			.control-label {
+				text-align: left !important;
+			}
+			.col-xs-7 {
+				margin-bottom: 5px;
+			}
+			legend {
+				border-bottom-color: rgb(0, 0, 0, 0.7);
+			}
+			.btn {
+				border-radius: 25px;
+			}
+			.btn-submit {
+				margin-right: 10px;
+				background-color: white !important;
+				color: black !important;
+				border-color: black !important;
+			}
+			.btn-submit:hover {
+				color: white !important;
+				background-color: black !important;
+			}
+			.btn-danger {
+				margin-left: 10px;
+				background: white;
+				color: #ac2925;
+			}
+
+			.jumbotron {
+				background: white;
+				margin-top: 50px;
+				margin-right: 20px;
+				margin-left: 20px;
+			}
+
+			form {
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+			 h2 {
+			 	font-size: 35px;
+			 	color: rgb(90, 166, 166);
+			 	font-weight: bold;
+			 }
+			 .form-control {
+			 	color: black;
+			 }
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="jumbotron">
+					<div class="container">
+						<legend><h2 class="text-center">NETWORK ADMINISTRATOR</h2></legend>
+					</div>
+					<div class="container">
+						<form class="form-horizontal" action={{ url_for('result') }}  method="post">
+					<div class="form-group">
+						<label class="control-label col-xs-5" for="var_1">Enter IP of VM</label>
+						<div class="col-xs-7">
+							<input type="string " class="form-control" name="VM" placeholder="&nbsp;0&nbsp;">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-xs-12">
+							<h3 class="text-center" style="color: rgb(0, 0, 0, 0.7)"><b>COST OF RISK</b></h3>
+						</div>
+						<label class="control-label col-xs-5" for="var_1">TCP</label>
+						<div class="col-xs-7">
+							<input type="integer" class="form-control" name="tcp_cost" placeholder="&nbsp;0&nbsp;" value="35">
+						</div>
+
+						<label class="control-label col-xs-5" for="var_1">UDP</label>
+						<div class="col-xs-7">
+							<input type="integer" class="form-control" name="udp_cost" placeholder="&nbsp;0&nbsp;" value="15">
+						</div>
+
+						<label class="control-label col-xs-5" for="var_1">ICMP</label>
+						<div class="col-xs-7">
+							<input type="integer" class="form-control" name="icmp_cost" placeholder="&nbsp;0&nbsp;" value="50">
+						</div>
+
+					</div>
+					
+					<div class="form-group">
+            			<div class="text-center">
+                			<input type="submit" class="btn btn-submit btn-lg" value="Calculate">
+                			<input type="reset" class="btn btn-danger btn-lg" value="Reset IP">
+            			</div>
+        			</div>
+        		</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</body>
+</html>
